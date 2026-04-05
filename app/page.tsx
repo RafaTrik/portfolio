@@ -26,6 +26,8 @@ const PROJECTS = [
     tags: ['PHP', 'React', 'WebSockets', 'MySQL'],
     status: 'in-progress' as const,
     statusLabel: 'In progress',
+    github: '',
+    live: '',
   },
   {
     icon: '🤖',
@@ -34,6 +36,8 @@ const PROJECTS = [
     tags: ['Python', 'Gemini', 'React', 'FastAPI'],
     status: 'live' as const,
     statusLabel: 'Live',
+    github: 'https://github.com/RafaTrik/ai-doc-qa',
+    live: '',
   },
   {
     icon: '📄',
@@ -42,6 +46,8 @@ const PROJECTS = [
     tags: ['Python', 'Flask', 'Jinja2', 'python-docx'],
     status: 'live' as const,
     statusLabel: 'Live',
+    github: 'https://github.com/RafaTrik/cv-generator',
+    live: '',
   },
 ];
 
@@ -355,8 +361,8 @@ export default function HomePage() {
               <div className="project-top">
                 <div className="project-icon">{p.icon}</div>
                 <div className="project-links">
-                  <a href="#" className="project-link">GitHub</a>
-                  <a href="#" className="project-link">Live ↗</a>
+                  {p.github && <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-link">GitHub</a>}
+                  {p.live   && <a href={p.live}   target="_blank" rel="noopener noreferrer" className="project-link">Live ↗</a>}
                 </div>
               </div>
               <div className="project-name">{p.name}</div>
